@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# dist/war3map.lua is committed on purpose. It is the deliverable: the five-minute
+# instructions are "paste this one file into Scenario -> Map Script", and a reader
+# without Python would otherwise have nothing to paste. `python3 tools/build.py`
+# rewrites it from src/, and tools/all.py does that as a gate step, so a stale copy
+# is one command away from being corrected (or delete this comment and re-add the
+# ignore line if you would rather ship source only).
+
+# The JASS headers are reference input, not project output: 820 KB of Blizzard data
+# that tools/gen_ref.py turns into tools/ref/api_names.txt, which IS committed.
+tools/ref/*.j
